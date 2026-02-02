@@ -1,0 +1,17 @@
+run:
+How Many Number Do You Want to Compare
+4
+Begening of Loop[0, 0, 0, 0]
+Enter Your 1 Number
+10
+Enter Your 2 Number
+30
+Enter Your 3 Number
+20
+Enter Your 4 Number
+40
+Endinging of Loop[10, 30, 20, 40]
+Max Number is 40
+Min Number is 10
+Avarage Number is 25.0
+BUILD SUCCESSFUL (total time: 6 seconds)
