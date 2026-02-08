@@ -21,4 +21,9 @@ public class Circle {
     return result;
     
     }
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+    
 }
