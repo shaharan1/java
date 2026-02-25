@@ -4,6 +4,9 @@
  */
 package pos;
 
+import pos.dao.UserDao;
+import pos.model.User;
+
 /**
  *
  * @author Admin
@@ -14,7 +17,12 @@ public class POS {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+      
+        User u=new User("Shaharan", "1234");
+        UserDao dao=new UserDao();
+        dao.saveUser(u);
+     
+        
     }
     
 }
