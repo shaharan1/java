@@ -12,8 +12,7 @@
 /FactorialNumber/nbproject/private/
 /FactorialNumber/build/
 /RoomPractice/nbproject/private/
-/RoomPractice/build/
-<<<<<<< HEAD
+/RoomPractice/build
 /GuessGame/nbproject/private/
 /GuessGame/build/
 /PrimeNumber/nbproject/private/
@@ -64,7 +63,7 @@
 
 /ExamPractice/nbproject/private/
 /ExamPractice/build/
-=======
+
 /ClassTest/nbproject/private/
 /ClassTest/build/
 /BankingSystem/nbproject/private/
@@ -91,9 +90,9 @@
 /ClassTestExam/build/
 
 /Exam/nbproject/private/
-=======
+
 /Evedence1/nbproject/private/
 /Evedence1/build/
 /EvedenceNo3/nbproject/private/
 /EvedenceNo3/build/
->>>>>>> c9db9952b13c3a603428026016bb5b3555176a31
+
