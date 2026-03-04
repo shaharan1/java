@@ -12,15 +12,14 @@
 /FactorialNumber/nbproject/private/
 /FactorialNumber/build/
 /RoomPractice/nbproject/private/
-/RoomPractice/build/
-<<<<<<< HEAD
+/RoomPractice/build
 /GuessGame/nbproject/private/
 /GuessGame/build/
 /PrimeNumber/nbproject/private/
 /PrimeNumber/build/
 /GuessGame/dist/
 /PrimeNumber1/nbproject/private/
-=======
+
 /RoomPractice2/nbproject/private/
 /RoomPractice2/build/
 >>>>>>> af54ba565de264d5666d9ce92c116146b92223ee
@@ -30,9 +29,9 @@
 /TestArray/build/
 /FindMaxNumber/nbproject/private/
 /FindMaxNumber/build/
-<<<<<<< HEAD
+
 /ThePrimeNumber/nbproject/private/
-=======
+
 /SearchingArray/nbproject/private/
 /SearchingArray2/nbproject/private/
 /SearchingArray2/build/
@@ -47,9 +46,9 @@
 /ArrayMethods/nbproject/private/
 /ArrayMethods/build/
 /RoomPracticeArray/nbproject/private/
-<<<<<<< HEAD
+
 /RoomPracticeArray/build/
-=======
+
 /LearnObjectClass/nbproject/private/
 /LearnObjectClass/build/
 >>>>>>> 025fbb2656518b07e2f1bf70ad3c1897e9616832
@@ -61,10 +60,10 @@
 /Mobail/nbproject/private/
 /LearnInheritence/nbproject/private/
 /LearnInheritence/build/
-<<<<<<< Updated upstream
+
 /ExamPractice/nbproject/private/
 /ExamPractice/build/
-=======
+
 /ClassTest/nbproject/private/
 /ClassTest/build/
 /BankingSystem/nbproject/private/
@@ -89,7 +88,11 @@
 /ExamPrep/build/
 /ClassTestExam/nbproject/private/
 /ClassTestExam/build/
+
+/Exam/nbproject/private/
+
 /Evedence1/nbproject/private/
 /Evedence1/build/
 /EvedenceNo3/nbproject/private/
 /EvedenceNo3/build/
+
