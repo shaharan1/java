@@ -6,9 +6,7 @@ import java.util.Scanner;
 public class Evedence1 {
 
     public static void main(String[] args) {
-        
-             // 1 No Question Answer
-             
+             // 1 No Questions Answer  
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter Your Number");
         int num = scanner.nextInt();
@@ -32,12 +30,12 @@ public class Evedence1 {
             System.out.println(num + " is not a prime number");
         }
         
-        // 2 No Question Answer
+        // 2 No Questions Answer
         
         Truck truck=new Truck();
-        truck.weight = 2500;
+        truck.weight = 3000;
         truck.regularPrice = 100;
         
-        System.out.println(truck.getSalePrice());
+        System.out.println("The Final Price is " + truck.getSalePrice());
     }
 }

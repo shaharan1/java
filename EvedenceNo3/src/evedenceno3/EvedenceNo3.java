@@ -4,7 +4,7 @@ public class EvedenceNo3 {
 
     public static void main(String[] args) {
 
-        // 3 No Question Answer
+        // 3 No Questions Answer
         
         Animal dog = new Animal.Dog();
         Animal cat = new Animal.Cat();
@@ -26,7 +26,7 @@ public class EvedenceNo3 {
 
             @Override
             public void sound() {
-                System.out.println("Dog barks: Woof Woof!");
+                System.out.println("Dog barks: Woof Woof");
             }
 
             @Override
@@ -39,7 +39,7 @@ public class EvedenceNo3 {
 
             @Override
             public void sound() {
-                System.out.println("Cat meows: Meow Meow!");
+                System.out.println("Cat meows: Meow Meow");
             }
 
             @Override
