@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class AExam {
-
+    
     public static void main(String[] args) {
 
 //                       Generic
@@ -20,11 +20,14 @@ public class AExam {
 //        names.add("Gave");
 //        names.add("PHP");
 //        names.add("ACAD");
-//
 //        System.out.println(names);
 
+
 //                       Recursion
-System.out.println(factorial(5));
+//        System.out.println(factorial(5));
+        
+        
+        
 //                  Read and Write
 //        
 //        File file=new File("Hello.dat");
@@ -39,8 +42,7 @@ System.out.println(factorial(5));
 //        } catch (IOException ex) {
 //            Logger.getLogger(AExam.class.getName()).log(Level.SEVERE, null, ex);
 //        }
-//        
-//        
+
 //        try {
 //            FileInputStream input=new FileInputStream(file);
 //            int value;
@@ -52,6 +54,8 @@ System.out.println(factorial(5));
 //        } catch (IOException ex) {
 //            Logger.getLogger(AExam.class.getName()).log(Level.SEVERE, null, ex);
 //        }
+
+
     }
 
 //                           Recursion
@@ -61,7 +65,7 @@ System.out.println(factorial(5));
         } else {
             return n * factorial(n - 1);
         }
-
+        
     }
-
+    
 }
