@@ -29,7 +29,7 @@ public class AdvanceJava {
         Connection con = null;
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Drive");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(url, user, password);
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(AdvanceJava.class.getName()).log(Level.SEVERE, null, ex);
@@ -40,7 +40,7 @@ public class AdvanceJava {
 
     public static void createStudent(String name, String email, float fee, String adress) {
 
-        String createSql = "insert into student(name,email,fee,adress)";
+        String createSql = "insert into student(name,email,fee,adress) values(?,?,?,?)";
         try {
             ps = getCon().prepareStatement(createSql);
             ps.setString(1, name);
@@ -50,12 +50,11 @@ public class AdvanceJava {
 
             ps.executeUpdate();
             ps.close();
-            rs.close();
             getCon().close();
             System.out.println("Data Saved");
         } catch (SQLException ex) {
             Logger.getLogger(AdvanceJava.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Data Not Saved");
+            System.err.println("Data Not Saved");
 
         }
 
@@ -69,11 +68,12 @@ public class AdvanceJava {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                String student = rs.getInt(1) + " "
-                        + rs.getString("name") + " "
-                        + rs.getString(3) + " "
-                        + rs.getString(4);
-                System.out.println(student);
+                String student = rs.getInt("id") + " "
+                    + rs.getString("name") + " "
+                    + rs.getString("email") + " "
+                    + rs.getFloat("fee") + " "
+                    + rs.getString("adress");
+            System.out.println(student);
             }
             ps.close();
             rs.close();
