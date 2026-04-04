@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<jee>
+    <student>
+        <id>1</id>
+        <name>Shaharan</name>
+        <age>26</age>
+    </student>
+    
+    <student>
+        <id>2</id>
+        <name>Emon</name>
+        <age>28</age>
+    </student>
+    
+    <student>
+        <id>3</id>
+        <name>Sajin</name>
+        <age>26</age>
+    </student>
+</jee>
+
