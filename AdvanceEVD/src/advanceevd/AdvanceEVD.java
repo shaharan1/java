@@ -1,6 +1,7 @@
 package advanceevd;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,27 +11,28 @@ import java.util.logging.Logger;
 
 public class AdvanceEVD {
 
-    static PreparedStatement ps;
-    static ResultSet rs;
-//    private static int id;
-//    private static String name;
-//    private static float salary;
-//    private static String department_name;
+
 
     public static void main(String[] args) {
-        createEmployeeData("Shaharan", 50000, "JAVA");
-        createEmployeeData("PK", 60000, "HTML");
-        createEmployeeData("Abul", 70000, "PHP");
-        showAllData();
-        System.out.println("....................");
+        createData("Shaharan Hossain", "Senior Manager", Date.valueOf("2020-05-10"), 70000);
+        createData("Badrul Amin", "Manager", Date.valueOf("2010-01-01"), 50000);
+        createData("Abul Hasan", "HR", Date.valueOf("2014-11-30"), 40000);
 
-        deleteData(2);
         showAllData();
-        System.out.println("....................");
+        System.out.println("-------------------");
 
-        updateData(3, "Abul Updated", 75000, "Advanced PHP");
+        deleteData(1);
+        
         showAllData();
-        System.out.println("....................");
+        System.out.println("-------------------");
+        
+        
+        updateData(2, "Badrul Amin", "Senior Manager", Date.valueOf("2010-01-01"), 75000);
+        updateData(3, "Abul Hasan", "CEO", Date.valueOf("2014-11-30"), 90000);
+        
+        showAllData();
+        System.out.println("-------------------");
+
     }
 
     public static Connection getCon() {
@@ -52,59 +54,42 @@ public class AdvanceEVD {
 
     }
 
-    public static void createEmployeeData(String name, float salary, String department_name) {
-        String createSql = "insert into employee (name,salary,department_name) values(?,?,?)";
-
-        try {
-            ps = getCon().prepareStatement(createSql);
+    public static void createData(String name, String designation, Date joining_date, double salary) {
+        String createSql = "INSERT INTO employee (name, designation, joining_date, salary) VALUES (?, ?, ?, ?)";
+        try (Connection con = getCon(); PreparedStatement ps = con.prepareStatement(createSql)) {
             ps.setString(1, name);
-            ps.setFloat(2, salary);
-            ps.setString(3, department_name);
+            ps.setString(2, designation);
+            ps.setDate(3, joining_date);
+            ps.setDouble(4, salary);
             ps.executeUpdate();
-
-            ps.close();
-            getCon().close();
-
             System.out.println("Data Saved");
-
         } catch (SQLException ex) {
-            Logger.getLogger(AdvanceEVD.class
-                    .getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AdvanceEVD.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Data Not Saved");
-
         }
     }
 
     public static void showAllData() {
-        String selectSql = "select * from employee";
+        String selectSql = "SELECT * FROM employee";
 
-        try {
-            ps = getCon().prepareStatement(selectSql);
-            rs = ps.executeQuery();
+        try (Connection con = getCon(); PreparedStatement ps = con.prepareStatement(selectSql); ResultSet rs = ps.executeQuery()) {
 
             while (rs.next()) {
-                System.out.println(rs.getInt(1) + " "
+                System.out.println(rs.getInt("id") + " "
                         + rs.getString("name") + " "
-                        + rs.getFloat(3) + " "
-                        + rs.getString(4));
-
+                        + rs.getString("designation") + " "
+                        + rs.getDate("joining_date") + " "
+                        + rs.getDouble("salary"));
             }
 
-            ps.close();
-            rs.close();
-            getCon().close();
-
         } catch (SQLException ex) {
-            Logger.getLogger(AdvanceEVD.class
-                    .getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AdvanceEVD.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     public static void deleteData(int id) {
         String deleteSql = "DELETE FROM employee WHERE id = ?";
         try (Connection con = getCon(); PreparedStatement ps = con.prepareStatement(deleteSql)) {
-
             ps.setInt(1, id);
             int status = ps.executeUpdate();
 
@@ -119,15 +104,15 @@ public class AdvanceEVD {
         }
     }
 
-    public static void updateData(int id, String name, float salary, String department_name) {
-        String updateSql = "UPDATE employee SET name = ?, salary = ?, department_name = ? WHERE id = ?";
-        try {
-            ps = getCon().prepareStatement(updateSql);
+    public static void updateData(int id, String name, String designation, Date joining_date, double salary) {
+        String updateSql = "UPDATE employee SET name = ?, designation = ?, joining_date = ?, salary = ? WHERE id = ?";
+        try (Connection con = getCon(); PreparedStatement ps = con.prepareStatement(updateSql)) {
 
             ps.setString(1, name);
-            ps.setFloat(2, salary);
-            ps.setString(3, department_name);
-            ps.setInt(4, id);
+            ps.setString(2, designation);
+            ps.setDate(3, joining_date);
+            ps.setDouble(4, salary);
+            ps.setInt(5, id);
 
             int rowsUpdated = ps.executeUpdate();
             if (rowsUpdated > 0) {
@@ -140,7 +125,5 @@ public class AdvanceEVD {
             System.out.println("Data Not Updated");
         }
     }
-
-    
 
 }
