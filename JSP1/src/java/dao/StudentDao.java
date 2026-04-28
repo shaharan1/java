@@ -12,12 +12,12 @@ import util.DbUtil;
 
 public class StudentDao {
 
-    DbUtil util = new DbUtil();
+   static DbUtil util = new DbUtil();
     static PreparedStatement ps;
     static ResultSet rs;
     static String sql;
 
-    public List<Student> getAllStudents() {
+    public static List<Student> getAllStudents() {
         List<Student> students = new ArrayList<>();
         sql = "select * from student";
 

@@ -8,11 +8,11 @@ import java.util.logging.Logger;
 
 public class DbUtil {
 
-    private static Connection con = null;
-    private static String url = "jdbc:mysql://localhost:3306/jspevd";
-    private static String user = "root";
-    private static String password = "1234";
-    private static final String driver = "com.mysql.cj.jdbc.Driver";
+    private  Connection con = null;
+    private  String url = "jdbc:mysql://localhost:3306/jspevd";
+    private  String user = "root";
+    private  String password = "1234";
+    private  final String driver = "com.mysql.cj.jdbc.Driver";
     
     
      public  Connection getCon(){
