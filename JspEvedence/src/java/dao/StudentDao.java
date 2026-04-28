@@ -120,7 +120,7 @@ public class StudentDao {
     public static int updateStudent(Student s) {
         int status = 0;
         sql = "update student set name= ?, email= ?, dob= ?, fee=? where id=?";
-        System.out.println("1111111111111111111111111111111111111111111");
+       
         try {
             ps = util.getCon().prepareStatement(sql);
             
@@ -132,9 +132,7 @@ public class StudentDao {
 
             status = ps.executeUpdate();
             
-            System.out.println("*****************************"+status);
-            System.out.println("22222222222222222222222222222222222222222222");
-            
+           
             ps.close();
             util.getCon().close();
 
