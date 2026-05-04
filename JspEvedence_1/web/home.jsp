@@ -35,8 +35,8 @@
                     <td>${s.department}</td>
 
                     <td>
-                        <a href="editStudentForm.jsp?roll=${s.roll}" class="btn btn-sm btn-primary">Edit</a>
-                        <a href="deleteStudent.jsp?roll=${s.roll}" class="btn btn-sm btn-danger"
+                        <a href="editStudentForm.jsp?id=${s.roll}" class="btn btn-sm btn-primary">Edit</a>
+                        <a href="deleteStudent.jsp?id=${s.roll}" class="btn btn-sm btn-danger"
                            onclick="return confirm('Are you sure you want to delete this student?');">Delete</a>
                     </td>
                 </tr>
